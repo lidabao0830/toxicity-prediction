@@ -1,10 +1,7 @@
-# tox.py
-import matplotlib
-matplotlib.use('Agg')
-import matplotlib.pyplot as plt
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import matplotlib.pyplot as plt
 from torch_geometric.data import Data, DataLoader
 from torch_geometric.nn import MessagePassing, global_mean_pool, global_max_pool, Set2Set, NNConv
 from torch_geometric.utils import add_self_loops
