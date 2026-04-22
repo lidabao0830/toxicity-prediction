@@ -9,7 +9,20 @@ import tempfile
 
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
+
+
+MATPLOTLIB_AVAILABLE = False
+MATPLOTLIB_IMPORT_ERROR = ""
+
+try:
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    MATPLOTLIB_AVAILABLE = True
+except Exception as e:
+    plt = None
+    MATPLOTLIB_IMPORT_ERROR = str(e)
+
 
 from toxicity_platform import ToxicityPredictionPlatform
 
