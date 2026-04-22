@@ -7,9 +7,14 @@ import inspect
 import contextlib
 import tempfile
 
+
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+
 import pandas as pd
 import streamlit as st
-import matplotlib.pyplot as plt
+import numpy as np
 
 from toxicity_platform import ToxicityPredictionPlatform
 
