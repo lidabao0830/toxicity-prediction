@@ -9,28 +9,12 @@ import tempfile
 
 import pandas as pd
 import streamlit as st
-
-
-MATPLOTLIB_AVAILABLE = False
-MATPLOTLIB_IMPORT_ERROR = ""
-
-try:
-    import matplotlib
-    matplotlib.use("Agg")
-    import matplotlib.pyplot as plt
-    MATPLOTLIB_AVAILABLE = True
-except Exception as e:
-    plt = None
-    MATPLOTLIB_IMPORT_ERROR = str(e)
-
+import matplotlib.pyplot as plt
 
 from toxicity_platform import ToxicityPredictionPlatform
 
 
-# =========================================================
-# 你提供给用户使用的默认模型路径
-# 后台固定平台模型，不在前端让用户选择或上传
-# =========================================================
+
 PLATFORM_DEFAULT_MODEL_PATH = r"Best-Train-Model.pth"
 
 
